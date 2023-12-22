@@ -36,9 +36,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run server
-        run: npm start & npx wait-on http://127.0.0.1:$PORT # requires MongoDB Atlas to accept requests from anywhere!
-      # - name: Run tests
-      #   run: echo "running tests..."
+        run: npm start & npx wait-on http://127.0.0.1:${{ env.PORT }} # requires MongoDB Atlas to accept requests from anywhere!
+      - name: Run tests
+        run: echo "running tests..."
       - name: Output information
         run: |
           echo "MONGODB_USERNAME: $MONGODB_USERNAME"
